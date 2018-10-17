@@ -1,0 +1,10 @@
+Path,Lines of code,Lines of code generated,Lines of user code, Percentage of generated code
+/E3Value,68,68,0,"100,00"
+/E3Value/META-INF,15,15,0,"100,00"
+/E3Value/bin/e3Value,265,265,0,"100,00"
+/E3Value/bin/e3Value/impl,899,899,0,"100,00"
+/E3Value/bin/e3Value/util,276,276,0,"100,00"
+/E3Value/model,2488,2488,0,"100,00"
+/E3Value/src-gen/e3Value,5471,5471,0,"100,00"
+/E3Value/src-gen/e3Value/impl,6008,6008,0,"100,00"
+/E3Value/src-gen/e3Value/util,1502,1502,0,"100,00"
