@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bpmn" nsURI="http://www.example.org/bpmn" nsPrefix="bpmn">
+  <eClassifiers xsi:type="ecore:EClass" name="Lane">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameLane" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="figure" upperBound="-1"
+        eType="#//Figure" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="poolrelationlane" eType="#//Pool"
+        eOpposite="#//Pool/lanerelationpool"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="laneincludefigure" upperBound="-1"
+        eType="#//Figure" eOpposite="#//Figure/figurecontentslane"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lanerelationswimline" lowerBound="1"
+        eType="#//Swimlane" eOpposite="#//Swimlane/laneincludeswimlane"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//Figure"
+        eOpposite="#//Figure/connectionTarget"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//Figure"
+        eOpposite="#//Figure/connectionSource"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Figure" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connection" upperBound="-1"
+        eType="#//Connection" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectionTarget" upperBound="-1"
+        eType="#//Connection" eOpposite="#//Connection/to"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectionSource" upperBound="-1"
+        eType="#//Connection" eOpposite="#//Connection/from"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="figurecontentslane" lowerBound="1"
+        eType="#//Lane" eOpposite="#//Lane/laneincludefigure"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeConnectionSecuence">
+    <eLiterals name="NORMAL"/>
+    <eLiterals name="DEFAULT" value="1"/>
+    <eLiterals name="CONDITIONAL" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Swimlane">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lane" upperBound="-1" eType="#//Lane"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pool" upperBound="-1" eType="#//Pool"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameSwimlane" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="poolincludeswimlane" upperBound="-1"
+        eType="#//Pool" eOpposite="#//Pool/swimlane"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="laneincludeswimlane" upperBound="-1"
+        eType="#//Lane" eOpposite="#//Lane/lanerelationswimline"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//Elements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeActivity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nature" eType="#//NatureActivityMaker"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="performance" upperBound="2"
+        eType="#//PerformanceActivityMaker" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="natureactivitymaker" eType="#//NatureActivityMaker"
+        eOpposite="#//NatureActivityMaker/activity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="performanceactivitymaker"
+        upperBound="2" eType="#//PerformanceActivityMaker" eOpposite="#//PerformanceActivityMaker/activity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+        eType="#//Event" eOpposite="#//Event/activity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gateway" eSuperTypes="#//Elements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeGateway"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//Elements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeData"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="#//Connection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//Connection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeAssociation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Secuence" eSuperTypes="#//Connection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeConnectionSecuence"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeAssociation">
+    <eLiterals name="DIRECTED"/>
+    <eLiterals name="NON_DIRECTED" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pool">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="namePool" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="swimlane" lowerBound="1"
+        eType="#//Swimlane" eOpposite="#//Swimlane/poolincludeswimlane"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lanerelationpool" upperBound="-1"
+        eType="#//Lane" eOpposite="#//Lane/poolrelationlane"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childpool" upperBound="-1"
+        eType="#//Pool" eOpposite="#//Pool/fatherpool"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fatherpool" eType="#//Pool"
+        eOpposite="#//Pool/childpool"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BPMN">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameDiagram" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="swimlane" eType="#//Swimlane"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeGateway">
+    <eLiterals name="EXCLUSIVE"/>
+    <eLiterals name="EVENT_BASED" value="1"/>
+    <eLiterals name="PARALLEL" value="2"/>
+    <eLiterals name="INCLUSIVE" value="3"/>
+    <eLiterals name="EXCLUSIVE_EVENT_BASED" value="4"/>
+    <eLiterals name="COMPLEX" value="5"/>
+    <eLiterals name="PARALLEL_EVENT_BASED" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeActivity">
+    <eLiterals name="TASK"/>
+    <eLiterals name="SUBPROCESS" value="1"/>
+    <eLiterals name="CALL" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeData">
+    <eLiterals name="INPUT"/>
+    <eLiterals name="OUTPUT" value="1"/>
+    <eLiterals name="OBJECT" value="2"/>
+    <eLiterals name="MESSAGE" value="3"/>
+    <eLiterals name="DATASTORE" value="4"/>
+    <eLiterals name="OBJECT_COLLECTION" value="6"/>
+    <eLiterals name="TEXTANNOTATION" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeNatureActivityMaker">
+    <eLiterals name="SEND"/>
+    <eLiterals name="RECEPTION" value="1"/>
+    <eLiterals name="USER_TASK" value="2"/>
+    <eLiterals name="MANUAL_TASK" value="3"/>
+    <eLiterals name="BUSINESS_RULE" value="4"/>
+    <eLiterals name="SERVICE_TASK" value="5"/>
+    <eLiterals name="SCRIPT" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypePerformanceActivityMaker">
+    <eLiterals name="SUBPROCESS"/>
+    <eLiterals name="CYCLE" value="2"/>
+    <eLiterals name="PARALLEL_MULTIPLE_INSTANCE" value="3"/>
+    <eLiterals name="SECUENCE_MULTIPLE_INSTANCE" value="4"/>
+    <eLiterals name="ADHOC" value="5"/>
+    <eLiterals name="COMPENSATION" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeSubprocess">
+    <eLiterals name="MESSAGE"/>
+    <eLiterals name="TEMPORARY" value="1"/>
+    <eLiterals name="SCALABLE" value="2"/>
+    <eLiterals name="CONDITIONAL" value="3"/>
+    <eLiterals name="ERROR" value="4"/>
+    <eLiterals name="COMPENSATION" value="5"/>
+    <eLiterals name="SIGNAL" value="6"/>
+    <eLiterals name="MULTIPLE" value="7"/>
+    <eLiterals name="PARALLEL_MULTIPLE" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeSubprocessNonInterrupt">
+    <eLiterals name="MESSAGE"/>
+    <eLiterals name="TEMPORARY" value="1"/>
+    <eLiterals name="SCALABLE" value="2"/>
+    <eLiterals name="CONDITIONAL" value="3"/>
+    <eLiterals name="SIGNAL" value="4"/>
+    <eLiterals name="MULTIPLE" value="5"/>
+    <eLiterals name="PARALLEL_MULTIPLE" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeBoundary">
+    <eLiterals name="MESSAGE"/>
+    <eLiterals name="TEMPORARY" value="1"/>
+    <eLiterals name="SCALABLE" value="2"/>
+    <eLiterals name="CONDITIONAL" value="3"/>
+    <eLiterals name="ERROR" value="4"/>
+    <eLiterals name="COMPENSATION" value="5"/>
+    <eLiterals name="SIGNAL" value="6"/>
+    <eLiterals name="MULTIPLE" value="7"/>
+    <eLiterals name="PARALLEL_MULTIPLE" value="8"/>
+    <eLiterals name="CANCEL" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeHighLevel">
+    <eLiterals name="SIMPLE"/>
+    <eLiterals name="MESSAGE" value="1"/>
+    <eLiterals name="TEMPORARY" value="2"/>
+    <eLiterals name="CONDITIONAL" value="3"/>
+    <eLiterals name="SIGNAL" value="4"/>
+    <eLiterals name="MULTIPLE" value="5"/>
+    <eLiterals name="PARALLEL_MULTIPLE" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeThrow">
+    <eLiterals name="SIMPLE"/>
+    <eLiterals name="MESSAGE" value="1"/>
+    <eLiterals name="SCALABLE" value="2"/>
+    <eLiterals name="LINK" value="3"/>
+    <eLiterals name="COMPENSATION" value="4"/>
+    <eLiterals name="SIGNAL" value="5"/>
+    <eLiterals name="MULTIPLE" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeFinal">
+    <eLiterals name="SIMPLE"/>
+    <eLiterals name="MESSAGE" value="1"/>
+    <eLiterals name="SCALABLE" value="2"/>
+    <eLiterals name="ERROR" value="3"/>
+    <eLiterals name="CANCEL" value="4"/>
+    <eLiterals name="COMPENSATION" value="5"/>
+    <eLiterals name="SIGNAL" value="6"/>
+    <eLiterals name="MULTIPLE" value="8"/>
+    <eLiterals name="FINAL" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeBoundaryNonInterrupt">
+    <eLiterals name="MESSAGE"/>
+    <eLiterals name="TEMPORARY" value="1"/>
+    <eLiterals name="SCALABLE" value="2"/>
+    <eLiterals name="CONDITIONAL" value="3"/>
+    <eLiterals name="SIGNAL" value="4"/>
+    <eLiterals name="MULTIPLE" value="5"/>
+    <eLiterals name="PARALLEL_MULTIPLE" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true" eSuperTypes="#//Elements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="#//Activity"
+        eOpposite="#//Activity/events"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Final" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeFinal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Initial" abstract="true" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Intermediate" abstract="true" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HighLevel" eSuperTypes="#//Initial">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeHighLevel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Subprocess" eSuperTypes="#//Initial">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeSubprocess"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubprocessNonInterrupt" eSuperTypes="#//Initial">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeSubprocessNonInterrupt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Catch" eSuperTypes="#//Intermediate">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeCatch"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Boundary" eSuperTypes="#//Intermediate">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeBoundary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundaryNonInterrupt" eSuperTypes="#//Intermediate">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeBoundaryNonInterrupt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Throw" eSuperTypes="#//Intermediate">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeThrow"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeCatch">
+    <eLiterals name="MESSAGE"/>
+    <eLiterals name="TEMPORARY" value="1"/>
+    <eLiterals name="CONDITIONAL" value="2"/>
+    <eLiterals name="SIGNAL" value="3"/>
+    <eLiterals name="MULTIPLE" value="4"/>
+    <eLiterals name="PARALLEL_MULTIPLE" value="5"/>
+    <eLiterals name="LINK" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PerformanceActivityMaker">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypePerformanceActivityMaker"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+        eType="#//Activity" eOpposite="#//Activity/performanceactivitymaker"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NatureActivityMaker">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeNatureActivityMaker"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+        eType="#//Activity" eOpposite="#//Activity/natureactivitymaker"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Group" eSuperTypes="#//Figure">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//Elements" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementsGroup" upperBound="-1"
+        eType="#//Elements" eOpposite="#//Elements/group"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Elements" abstract="true" eSuperTypes="#//Figure">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" eType="#//Group"
+        eOpposite="#//Group/elementsGroup"/>
+  </eClassifiers>
+</ecore:EPackage>

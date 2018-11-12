@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/BPMN/src-gen" creationIcons="false" editDirectory="/BPMN.edit/src-gen"
+    editorDirectory="/BPMN.editor/src-gen" modelPluginID="BPMN" modelName="BPMN" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>bPMN.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="BPMN" disposableProviderFactory="true" ecorePackage="bPMN.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeConnectionSecuence">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeConnectionSecuence/NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeConnectionSecuence/DEFAULT"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeConnectionSecuence/CONDITIONAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeAssociation">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeAssociation/DIRECTED"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeAssociation/NON_DIRECTED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeGateway">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeGateway/EXCLUSIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeGateway/EVENT_BASED"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeGateway/PARALLEL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeGateway/INCLUSIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeGateway/EXCLUSIVE_EVENT_BASED"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeGateway/COMPLEX"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeGateway/PARALLEL_EVENT_BASED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeActivity">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeActivity/TASK"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeActivity/SUBPROCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeActivity/CALL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeData">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeData/INPUT"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeData/OUTPUT"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeData/OBJECT"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeData/MESSAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeData/DATASTORE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeData/OBJECT_COLLECTION"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeData/TEXTANNOTATION"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeNatureActivityMaker">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeNatureActivityMaker/SEND"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeNatureActivityMaker/RECEPTION"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeNatureActivityMaker/USER_TASK"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeNatureActivityMaker/MANUAL_TASK"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeNatureActivityMaker/BUSINESS_RULE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeNatureActivityMaker/SERVICE_TASK"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeNatureActivityMaker/SCRIPT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypePerformanceActivityMaker">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypePerformanceActivityMaker/SUBPROCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypePerformanceActivityMaker/CYCLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypePerformanceActivityMaker/PARALLEL_MULTIPLE_INSTANCE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypePerformanceActivityMaker/SECUENCE_MULTIPLE_INSTANCE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypePerformanceActivityMaker/ADHOC"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypePerformanceActivityMaker/COMPENSATION"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeSubprocess">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocess/MESSAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocess/TEMPORARY"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocess/SCALABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocess/CONDITIONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocess/ERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocess/COMPENSATION"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocess/SIGNAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocess/MULTIPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocess/PARALLEL_MULTIPLE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeSubprocessNonInterrupt">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocessNonInterrupt/MESSAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocessNonInterrupt/TEMPORARY"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocessNonInterrupt/SCALABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocessNonInterrupt/CONDITIONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocessNonInterrupt/SIGNAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocessNonInterrupt/MULTIPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeSubprocessNonInterrupt/PARALLEL_MULTIPLE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeBoundary">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundary/MESSAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundary/TEMPORARY"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundary/SCALABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundary/CONDITIONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundary/ERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundary/COMPENSATION"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundary/SIGNAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundary/MULTIPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundary/PARALLEL_MULTIPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundary/CANCEL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeHighLevel">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeHighLevel/SIMPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeHighLevel/MESSAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeHighLevel/TEMPORARY"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeHighLevel/CONDITIONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeHighLevel/SIGNAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeHighLevel/MULTIPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeHighLevel/PARALLEL_MULTIPLE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeThrow">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeThrow/SIMPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeThrow/MESSAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeThrow/SCALABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeThrow/LINK"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeThrow/COMPENSATION"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeThrow/SIGNAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeThrow/MULTIPLE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeFinal">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeFinal/SIMPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeFinal/MESSAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeFinal/SCALABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeFinal/ERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeFinal/CANCEL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeFinal/COMPENSATION"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeFinal/SIGNAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeFinal/MULTIPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeFinal/FINAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeBoundaryNonInterrupt">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundaryNonInterrupt/MESSAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundaryNonInterrupt/TEMPORARY"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundaryNonInterrupt/SCALABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundaryNonInterrupt/CONDITIONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundaryNonInterrupt/SIGNAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundaryNonInterrupt/MULTIPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeBoundaryNonInterrupt/PARALLEL_MULTIPLE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bPMN.ecore#//TypeCatch">
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeCatch/MESSAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeCatch/TEMPORARY"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeCatch/CONDITIONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeCatch/SIGNAL"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeCatch/MULTIPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeCatch/PARALLEL_MULTIPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="bPMN.ecore#//TypeCatch/LINK"/>
+    </genEnums>
+    <genClasses ecoreClass="bPMN.ecore#//Lane">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Lane/nameLane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bPMN.ecore#//Lane/figure"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Lane/poolrelationlane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Lane/laneincludefigure"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Lane/lanerelationswimline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Lane/creationDate"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Connection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Connection/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Connection/to"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Connection/from"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Connection/creationDate"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Figure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Figure/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bPMN.ecore#//Figure/connection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Figure/connectionTarget"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Figure/connectionSource"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Figure/figurecontentslane"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Figure/creationDate"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Swimlane">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bPMN.ecore#//Swimlane/lane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bPMN.ecore#//Swimlane/pool"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Swimlane/nameSwimlane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Swimlane/poolincludeswimlane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Swimlane/laneincludeswimlane"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Swimlane/creationDate"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Activity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Activity/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bPMN.ecore#//Activity/nature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bPMN.ecore#//Activity/performance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Activity/natureactivitymaker"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Activity/performanceactivitymaker"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Activity/events"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Gateway">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Gateway/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Data/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Message"/>
+    <genClasses ecoreClass="bPMN.ecore#//Association">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Association/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Secuence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Secuence/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Pool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Pool/namePool"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Pool/swimlane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Pool/lanerelationpool"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Pool/childpool"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Pool/fatherpool"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Pool/creationDate"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//BPMN">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//BPMN/nameDiagram"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bPMN.ecore#//BPMN/swimlane"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="bPMN.ecore#//Event">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Event/activity"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Final">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Final/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="bPMN.ecore#//Initial"/>
+    <genClasses image="false" ecoreClass="bPMN.ecore#//Intermediate"/>
+    <genClasses ecoreClass="bPMN.ecore#//HighLevel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//HighLevel/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Subprocess">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Subprocess/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//SubprocessNonInterrupt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//SubprocessNonInterrupt/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Catch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Catch/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Boundary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Boundary/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//BoundaryNonInterrupt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//BoundaryNonInterrupt/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Throw">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//Throw/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//PerformanceActivityMaker">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//PerformanceActivityMaker/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//PerformanceActivityMaker/activity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//PerformanceActivityMaker/creationDate"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//NatureActivityMaker">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//NatureActivityMaker/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//NatureActivityMaker/activity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bPMN.ecore#//NatureActivityMaker/creationDate"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Group">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bPMN.ecore#//Group/elements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Group/elementsGroup"/>
+    </genClasses>
+    <genClasses ecoreClass="bPMN.ecore#//Elements">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bPMN.ecore#//Elements/group"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
